@@ -67,14 +67,13 @@ app.post("/analyze", upload.single("resume"), async (req, res) => {
 
 
         res.render("analyze", {
-            aiResult
+            aiResult: aiResult
         });
 
 
     } catch (err) {
 
         console.log(err);
-
         res.status(500).send("Error while analyzing resume.");
 
     }
@@ -85,7 +84,7 @@ app.post("/analyze", upload.single("resume"), async (req, res) => {
 // Cover Letter Page
 app.get("/cover-letter", (req, res) => {
 
-    res.render("cover letter");
+    res.render("cover-letter");
 
 });
 
@@ -93,7 +92,7 @@ app.get("/cover-letter", (req, res) => {
 // Generate Cover Letter
 app.post("/cover-letter", (req, res) => {
 
-    res.render("cover result", {
+    res.render("cover-result", {
 
         name: req.body.name,
         role: req.body.role,
@@ -109,7 +108,7 @@ app.post("/cover-letter", (req, res) => {
 // 404 Page
 app.use((req, res) => {
 
-    res.render("404");
+    res.status(404).render("404");
 
 });
 
