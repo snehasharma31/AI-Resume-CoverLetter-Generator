@@ -14,21 +14,24 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // View Engine
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+
+// EJS files root folder me hain
+app.set("views", __dirname);
+
 
 // Upload Folder
 const upload = multer({
     dest: "uploads/"
 });
 
+
 // Home Page
 app.get("/", (req, res) => {
     res.render("index");
 });
 
-// ===============================
+
 // Resume Analysis
-// ===============================
 app.post("/analyze", upload.single("resume"), async (req, res) => {
 
     try {
@@ -37,7 +40,7 @@ app.post("/analyze", upload.single("resume"), async (req, res) => {
             return res.send("Please upload your resume.");
         }
 
-        // Dummy AI Result (Project Submission)
+
         const aiResult = `
 📊 ATS Score: 88%
 
@@ -62,9 +65,11 @@ app.post("/analyze", upload.single("resume"), async (req, res) => {
 • Add more job-specific keywords.
 `;
 
-        res.render("result", {
+
+        res.render("analyze", {
             aiResult
         });
+
 
     } catch (err) {
 
@@ -76,33 +81,44 @@ app.post("/analyze", upload.single("resume"), async (req, res) => {
 
 });
 
-// ===============================
+
 // Cover Letter Page
-// ===============================
 app.get("/cover-letter", (req, res) => {
-    res.render("cover-letter");
+
+    res.render("cover letter");
+
 });
 
-// ===============================
+
 // Generate Cover Letter
-// ===============================
 app.post("/cover-letter", (req, res) => {
 
-    res.render("cover-result", {
+    res.render("cover result", {
+
         name: req.body.name,
         role: req.body.role,
         company: req.body.company,
         skills: req.body.skills,
         details: req.body.details
+
     });
 
 });
 
-// ===============================
+
+// 404 Page
+app.use((req, res) => {
+
+    res.render("404");
+
+});
+
+
 // Server
-// ===============================
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log(`✅ Server is running on http://localhost:${PORT}`);
+
+    console.log(`✅ Server running on port ${PORT}`);
+
 });
