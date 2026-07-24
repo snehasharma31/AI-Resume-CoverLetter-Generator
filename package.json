@@ -1,0 +1,24 @@
+{
+  "name": "ai-resume-coverletter-generator",
+  "version": "1.0.0",
+  "description": "AI Resume & Cover Letter Generator",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Sneha Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^1.15.0",
+    "dotenv": "^17.4.2",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "pdf-parse": "^1.1.1",
+    "pdfkit": "^0.19.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
