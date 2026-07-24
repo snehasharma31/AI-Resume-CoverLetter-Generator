@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume & Cover Letter Generator</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+        <h1>🚀 AI Resume & Cover Letter Generator</h1>
+
+        <p class="text-muted">
+            Analyze your Resume using AI and Generate ATS-Friendly Cover Letters.
+        </p>
+    </div>
+
+
+    <div class="card shadow p-4">
+
+        <form action="/analyze" method="POST" enctype="multipart/form-data">
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Upload Resume
+                </label>
+
+                <input
+                    type="file"
+                    class="form-control"
+                    name="resume"
+                    accept=".pdf,.doc,.docx"
+                    required>
+
+            </div>
+
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Job Description
+                </label>
+
+
+                <textarea
+                    class="form-control"
+                    name="jobDescription"
+                    rows="8"
+                    placeholder="Paste Job Description Here..."
+                    required></textarea>
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="btn btn-primary w-100">
+
+                Analyze Resume 🚀
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

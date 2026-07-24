@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis Result</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h1>📊 Resume Analysis Result</h1>
+        <p class="text-muted">
+            AI Powered Resume Evaluation
+        </p>
+    </div>
+
+    <div class="card shadow p-4">
+
+        <pre style="white-space: pre-wrap; font-size:16px;"><%= aiResult %></pre>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a href="/" class="btn btn-primary">
+            Analyze Another Resume
+        </a>
+
+        <a href="/cover-letter" class="btn btn-success">
+            Generate Cover Letter
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
