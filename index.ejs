@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AI Resume & Cover Letter Generator</title>
 
     <!-- Bootstrap -->
@@ -10,22 +12,34 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
+
 </head>
+
 
 <body>
 
+
 <div class="container mt-5">
 
+
     <div class="text-center mb-5">
-        <h1>🚀 AI Resume & Cover Letter Generator</h1>
+
+        <h1>
+            🚀 AI Resume & Cover Letter Generator
+        </h1>
 
         <p class="text-muted">
             Analyze your Resume using AI and Generate ATS-Friendly Cover Letters.
         </p>
+
     </div>
 
 
+
     <div class="card shadow p-4">
+
+
+        <!-- Resume Analyzer Form -->
 
         <form action="/analyze" method="POST" enctype="multipart/form-data">
 
@@ -35,6 +49,7 @@
                 <label class="form-label">
                     Upload Resume
                 </label>
+
 
                 <input
                     type="file"
@@ -76,6 +91,18 @@
 
         </form>
 
+
+
+        <!-- Cover Letter Button -->
+
+        <a href="/cover-letter" class="btn btn-success w-100 mt-3">
+
+            Generate Cover Letter ✉️
+
+        </a>
+
+
+
     </div>
 
 
@@ -83,4 +110,5 @@
 
 
 </body>
+
 </html>
