@@ -1,111 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analysis Result</title>
 
-    <title>
-        Resume Analyzer
-    </title>
-
-
-    <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/style.css">
-
 </head>
-
 
 <body>
 
-
 <div class="container mt-5">
-
-
-    <div class="text-center mb-5">
-
-        <h1>
-            📄 AI Resume Analyzer
-        </h1>
-
-        <p class="text-muted">
-            Upload your resume and get ATS score, missing keywords and suggestions.
-        </p>
-
-    </div>
-
-
 
     <div class="card shadow p-4">
 
+        <h1 class="text-center">
+            📊 Resume Analysis Result
+        </h1>
 
-        <form 
-        action="/analyze"
-        method="POST"
-        enctype="multipart/form-data">
+        <hr>
 
+        <pre style="white-space: pre-wrap; font-size:16px;">
+<%= aiResult %>
+        </pre>
 
-            <div class="mb-3">
-
-                <label class="form-label">
-                    Upload Resume (PDF)
-                </label>
-
-
-                <input
-                type="file"
-                class="form-control"
-                name="resume"
-                accept=".pdf,.doc,.docx"
-                required>
-
-            </div>
-
-
-
-            <div class="mb-3">
-
-                <label class="form-label">
-                    Job Description
-                </label>
-
-
-                <textarea
-                class="form-control"
-                name="jobDescription"
-                rows="6"
-                placeholder="Paste job description here..."
-                required></textarea>
-
-
-            </div>
-
-
-
-            <button
-            type="submit"
-            class="btn btn-primary w-100">
-
-                Analyze Resume 🚀
-
-            </button>
-
-
-        </form>
-
+        <a href="/" class="btn btn-primary mt-3">
+            Analyze Another Resume
+        </a>
 
     </div>
 
-
 </div>
 
-
 </body>
-
 </html>
